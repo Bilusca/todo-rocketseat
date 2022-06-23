@@ -1,0 +1,18 @@
+@import "mixins";
+
+.App {
+  section {
+    max-width: toRem(736);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .App {
+    width: 100%;
+  }
+}

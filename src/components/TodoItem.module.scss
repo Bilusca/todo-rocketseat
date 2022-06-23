@@ -1,0 +1,87 @@
+@import "../mixins";
+
+.TodoItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: toRem(16) toRem(19);
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #333;
+  background-color: var(--gray-400);
+  margin-bottom: toRem(12);
+
+  animation: addItem 0.2s ease-in-out;
+
+  div {
+    margin-right: toRem(12);
+
+    input[type="checkbox"] {
+      height: toRem(24);
+      width: toRem(24);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: 2px solid var(--blue);
+      border-radius: 9999px;
+      outline: none;
+      transition: 0.2s ease-in-out;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:checked {
+        border: 2px solid var(--purple-dark);
+        background-color: var(--purple-dark);
+
+        &:before {
+          content: "\2713";
+          color: var(--gray-100);
+          font-size: toRem(18);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  button {
+    margin-left: toRem(12);
+    background-color: transparent;
+    border-radius: 4px;
+
+    svg {
+      color: var(--gray-300);
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--danger);
+      }
+    }
+  }
+
+  p {
+    color: var(--gray-100);
+    line-height: var(--lh);
+    flex: 1;
+  }
+}
+
+.Completed {
+  color: var(--gray-300) !important;
+  text-decoration: line-through;
+}
+
+@keyframes addItem {
+  0% {
+    transform: translateY(toRem(12));
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

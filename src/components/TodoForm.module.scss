@@ -1,0 +1,58 @@
+@import "../mixins";
+
+.TodoForm {
+  display: flex;
+  width: 100%;
+  margin-top: toRem(-30);
+  margin-bottom: toRem(80);
+
+  button {
+    padding: toRem(16);
+    background-color: var(--blue-dark);
+    color: var(--gray-100);
+    font-size: toRem(14);
+    line-height: var(--lh);
+    font-weight: 700;
+    border-radius: 8px;
+    margin-left: toRem(8);
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+
+    svg {
+      margin-left: toRem(8);
+    }
+
+    &:hover {
+      background-color: var(--blue);
+    }
+  }
+
+  input {
+    padding: toRem(16);
+    background-color: var(--gray-500);
+    color: var(--gray-100);
+    font-size: toRem(16);
+    line-height: var(--lh);
+    border-radius: 8px;
+    flex: 1;
+
+    &::placeholder {
+      color: var(--gray-300);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .TodoForm {
+    flex-direction: column;
+    padding: 0 toRem(24);
+
+    button {
+      margin-top: toRem(12);
+      width: 100%;
+      margin-left: 0;
+      justify-content: center;
+    }
+  }
+}

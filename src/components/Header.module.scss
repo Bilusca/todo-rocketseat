@@ -1,0 +1,9 @@
+@import "../mixins";
+
+.Header {
+  background-color: var(--gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: toRem(200);
+}
